@@ -25,7 +25,7 @@
         </tr>
     </table>
     <hr>
-    <h3 style="text-align: center">LAPORAN PANITIA KHUSUS (PANSUS) <br>
+    <h3 style="text-align: center">LAPORAN AGENDA RAPAT PANITIA KHUSUS (PANSUS) <br>
         DPRD  PROVINSI KALIMANTAN SELATAN
     </h3> 
     <center>PERIODE : {{\Carbon\Carbon::createFromFormat('m', $bulan)->translatedFormat('F')}} {{$tahun}}</center>
@@ -33,13 +33,11 @@
     <table width="100%" border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>No</th>
-            <th>Nama</th>
-            <th>Masa Kerja</th>
-            <th>Pembahasan</th>
-            <th>Jumlah Anggota</th>
-            <th>Pimpinan</th>
+            <th>Tanggal Rapat</th>
+            <th>Nama Rapat</th>
+            <th>Jenis Rapat</th>
+            <th>Tempat Rapat</th>
             <th>Komisi</th>
-            <th>Anggota</th>
             <th>Keterangan</th>
         </tr>
         @php
@@ -49,13 +47,11 @@
         @foreach ($data as $key => $item)
         <tr>
           <td>{{$key + 1}}</td>
+          <td>{{\Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y')}}</td>
           <td>{{$item->nama}}</td>
-          <td>{{$item->masa_kerja}}</td>
-          <td>{{$item->pembahasan}}</td>
-          <td>{{$item->jumlah}}</td>
-          <td>{{$item->pimpinan == null ? null : $item->pimpinan->nama}}</td>
+          <td>{{$item->jenis}}</td>
+          <td>{{$item->tempat}}</td>
           <td>{{$item->komisi == null ? null : $item->komisi->nama}}</td>
-          <td>{{$item->anggota == null ? null : $item->anggota->nama}}</td>
           <td>{{$item->keterangan}}</td>
         </tr>
         @endforeach
