@@ -14,6 +14,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\PansusController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\HasilController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PelaporController;
 use App\Http\Controllers\PetugasController;
@@ -83,6 +84,14 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin/pansus/delete/{id}', [PansusController::class, 'delete']);
     Route::get('superadmin/pansus/edit/{id}', [PansusController::class, 'edit']);
     Route::post('superadmin/pansus/edit/{id}', [PansusController::class, 'update']);
+
+    Route::get('superadmin/hasil', [HasilController::class, 'index']);
+    Route::get('superadmin/hasil/create', [HasilController::class, 'create']);
+    Route::post('superadmin/hasil/create', [HasilController::class, 'store']);
+    Route::get('superadmin/hasil/cari', [HasilController::class, 'cari']);
+    Route::get('superadmin/hasil/delete/{id}', [HasilController::class, 'delete']);
+    Route::get('superadmin/hasil/edit/{id}', [HasilController::class, 'edit']);
+    Route::post('superadmin/hasil/edit/{id}', [HasilController::class, 'update']);
 
     Route::get('superadmin/agendakomisi', [RapatKomisiController::class, 'index']);
     Route::get('superadmin/agendakomisi/create', [RapatKomisiController::class, 'create']);
