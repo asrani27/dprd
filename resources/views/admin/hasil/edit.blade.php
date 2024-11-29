@@ -17,11 +17,21 @@
         <fieldset>
          
             <div class="field">
-               <label class="label_field">Komisi</label>
-               <select class="form-control" name="komisi_id" required>
+               <label class="label_field">Rapat Komisi</label>
+               <select class="form-control" name="rapat_komisi_id" required>
                   <option value="">-pilih-</option>
-                  @foreach (komisi() as $item)
-                  <option value="{{$item->id}}" {{$data->komisi_id == $item->id ? 'selected':''}}>{{$item->nama}}</option>
+                  @foreach (rapatkomisi() as $item)
+                  <option value="{{$item->id}}" {{$data->rapat_komisi_id == $item->id ? 'selected':''}}>{{$item->nama}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <br/>
+            <div class="field">
+               <label class="label_field">Rapat Pansus</label>
+               <select class="form-control" name="rapat_pansus_id" required>
+                  <option value="">-pilih-</option>
+                  @foreach (rapatpansus() as $item)
+                  <option value="{{$item->id}}" {{$data->rapat_pansus_id == $item->id ? 'selected':''}}>{{$item->nama}}</option>
                   @endforeach
                </select>
             </div>
