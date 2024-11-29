@@ -11,14 +11,13 @@
     <table width="100%">
         <tr>
             <td width="15%">
-                <img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(public_path('logo/hsu.png'))) }}" width="80px"> &nbsp;&nbsp;
-                <img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(public_path('logo/satpol.png'))) }}" width="67px">&nbsp;&nbsp;
+                <img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(public_path('logo/dprd.png'))) }}" width="80px"> &nbsp;&nbsp;
             </td>
             <td style="text-align: center;" width="60%">
-                PEMERINTAH KABUPATEN HULU SUNGAI UTARA<BR/>
-                KANTOR SATUAN POLISI PRAMONG PRAJA<br/>
-                Jl Bihman Villa No.16 Sungai Karias Kec. Amuntai Tengah, Kabupaten Hulu Sungai Utara<br/>
-                Kalimantan Selatan 71416
+                DEWAN PERWAKILAN RAKYAT<BR/>
+                PROVINSI KALIMANTAN SELATAN<br/>
+                SEKRETARIAT DPRD PROVINSI KALIMANTAN SELATAN<br/>
+                JL Lambung Mangkurat No 8 Banjarmasin. Kalimantan Selatan 70111
             </td>
             <td width="15%">
             </td>
@@ -26,16 +25,21 @@
         </tr>
     </table>
     <hr>
-    <h3 style="text-align: center">LAPORAN DATA TINDAKAN PELANGGARAN PERATURAN DAERAH </h3> 
+    <h3 style="text-align: center">LAPORAN PANITIA KHUSUS (PANSUS) <br>
+        DPRD  PROVINSI KALIMANTAN SELATAN
+    </h3> 
     <center>PERIODE : {{\Carbon\Carbon::createFromFormat('m', $bulan)->translatedFormat('F')}} {{$tahun}}</center>
     <br/>
     <table width="100%" border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>No</th>
-            <th>Tanggal</th>
-            <th>Nomor</th>
-            <th>Perda</th>
-            <th>Hukuman</th>
+            <th>Nama</th>
+            <th>Masa Kerja</th>
+            <th>Pembahasan</th>
+            <th>Jumlah Anggota</th>
+            <th>Pimpinan</th>
+            <th>Komisi</th>
+            <th>Anggota</th>
             <th>Keterangan</th>
         </tr>
         @php
@@ -45,10 +49,13 @@
         @foreach ($data as $key => $item)
         <tr>
           <td>{{$key + 1}}</td>
-          <td>{{\Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y')}}</td>
-          <td>{{$item->pengaduan == null ? null : $item->pengaduan->nomor}}</td>
-          <td>{{$item->perda == null ? null : $item->perda->nama}}</td>
-          <td>{{$item->hukuman}}</td>
+          <td>{{$item->nama}}</td>
+          <td>{{$item->masa_kerja}}</td>
+          <td>{{$item->pembahasan}}</td>
+          <td>{{$item->jumlah}}</td>
+          <td>{{$item->pimpinan == null ? null : $item->pimpinan->nama}}</td>
+          <td>{{$item->komisi == null ? null : $item->komisi->nama}}</td>
+          <td>{{$item->anggota == null ? null : $item->anggota->nama}}</td>
           <td>{{$item->keterangan}}</td>
         </tr>
         @endforeach

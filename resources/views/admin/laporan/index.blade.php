@@ -40,8 +40,10 @@
        <br>
        <select class="form-control" name="jenis" required>
           <option value="">-jenis-</option>
-          <option value="1">Laporan Pengaduan</option>
-          <option value="2">Laporan Tindakan</option>
+          <option value="1">Laporan Data Pansus</option>
+          <option value="2">Laporan Agenda Rapat Komisi</option>
+          <option value="3">Laporan Agenda Rapat Pansus</option>
+          <option value="4">LaporanHasil</option>
        </select>
        <br/>
       <button type="submit" class="btn btn-flat btn-sm btn-primary"><i class="fa fa-print"></i> Print</button>
