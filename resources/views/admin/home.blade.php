@@ -27,7 +27,7 @@
            <div class="row">
               <div class="col-md-12">
                 
-                <h1 style="color: aliceblue;padding:20px 20px; text-align:center"><img src="/logo/dprd.png" width="10%"> <br/><br/>APLIKASI SISTEM INFORMASI PANITA KHUSUS (PANSUS)<br/> DPRD PROVINSI KALIMANTAN SELATAN</h1>
+                <h1 style="color: aliceblue;padding:20px 20px; text-align:center"><img src="/logo/dprd.png" width="10%"> <br/><br/>APLIKASI SISTEM INFORMASI PANITIA KHUSUS (PANSUS)<br/> DPRD PROVINSI KALIMANTAN SELATAN</h1>
               </div>
            </div>
         </div>

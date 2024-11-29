@@ -44,7 +44,7 @@
                <div class="login_section" style="min-height: 100px;">
                   <div class="logo_login">
                      <div class="center">
-                      <h1 style="color:aliceblue; font-size:26px; text-align:center"><img src="/logo/dprd.png" width="20%"><br/> <br/> SISTEM INFORMASI PANITA KHUSUS (PANSUS)</h1>
+                      <h1 style="color:aliceblue; font-size:26px; text-align:center"><img src="/logo/dprd.png" width="20%"><br/> <br/> SISTEM INFORMASI PANITIA KHUSUS (PANSUS)</h1>
                      </div>
                   </div>
                   <div class="login_form">
