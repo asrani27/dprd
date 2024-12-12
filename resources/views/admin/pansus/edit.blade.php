@@ -57,13 +57,16 @@
             </div>
             <br/>
             <div class="field">
-               <label class="label_field">Anggota</label>
-               <select class="form-control" name="anggota_id" required>
-                  <option value="">-pilih-</option>
+               <label class="label_field">Checklist Anggota :</label><br/>
+               
                   @foreach (anggota() as $item)
-                  <option value="{{$item->id}}" {{$data->anggota_id == $item->id ? 'selected':''}}>{{$item->nama}}</option>
+                  @if (collect(json_decode($data->anggota_id))->search($item->id) == false)
+                  <input type="checkbox" value="{{$item->id}}" name="anggota_id[]" checked> &nbsp;{{$item->nama}} <br/>
+                  @else
+                  <input type="checkbox" value="{{$item->id}}" name="anggota_id[]"> &nbsp;{{$item->nama}} <br/>
+                      
+                  @endif
                   @endforeach
-               </select>
             </div>
             <br/>
             

@@ -34,14 +34,19 @@ class PansusController extends Controller
 
     public function update(Request $req, $id)
     {
-        Pansus::find($id)->update($req->all());
+        $param = $req->all();
+        $param['anggota_id'] = json_encode($req->anggota_id);
+        Pansus::find($id)->update($param);
         Session::flash('success', 'Berhasil Di Simpan');
         return redirect('/superadmin/pansus');
     }
 
     public function store(Request $req)
     {
-        Pansus::create($req->all());
+        $param = $req->all();
+        $param['anggota_id'] = json_encode($req->anggota_id);
+
+        Pansus::create($param);
         Session::flash('success', 'Berhasil Di Simpan');
         return redirect('/superadmin/pansus');
     }
