@@ -46,7 +46,13 @@
               <td>{{$item->jumlah}}</td>
               <td>{{$item->pimpinan == null ? null : $item->pimpinan->nama}}</td>
               <td>{{$item->komisi == null ? null : $item->komisi->nama}}</td>
-              <td>{{$item->anggota == null ? null : $item->anggota->nama}}</td>
+              <td>
+               
+               @foreach (anggota()->whereIn('id', json_decode($item->anggota_id)) as $item2)
+                   - {{$item2->nama}} <br/>
+               @endforeach
+
+              </td>
               <td>{{$item->keterangan}}</td>
               <td>
                 <a href="/superadmin/pansus/edit/{{$item->id}}" class="btn btn-flat btn-sm btn-success"><i class="fa fa-edit"></i> Edit</a>

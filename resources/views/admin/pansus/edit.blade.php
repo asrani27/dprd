@@ -60,11 +60,10 @@
                <label class="label_field">Checklist Anggota :</label><br/>
                
                   @foreach (anggota() as $item)
-                  @if (collect(json_decode($data->anggota_id))->search($item->id) == false)
-                  <input type="checkbox" value="{{$item->id}}" name="anggota_id[]" checked> &nbsp;{{$item->nama}} <br/>
+                  @if(in_array($item->id, json_decode($data->anggota_id)))
+                     <input type="checkbox" value="{{$item->id}}" name="anggota_id[]" checked> &nbsp;{{$item->nama}} <br/>
                   @else
-                  <input type="checkbox" value="{{$item->id}}" name="anggota_id[]"> &nbsp;{{$item->nama}} <br/>
-                      
+                     <input type="checkbox" value="{{$item->id}}" name="anggota_id[]"> &nbsp;{{$item->nama}} <br/>
                   @endif
                   @endforeach
             </div>
