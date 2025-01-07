@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin', [HomeController::class, 'superadmin']);
 
     Route::get('superadmin/user', [UserController::class, 'index']);
+    Route::get('superadmin/user/detail/{id}', [UserController::class, 'detail']);
     Route::get('superadmin/user/create', [UserController::class, 'create']);
     Route::post('superadmin/user/create', [UserController::class, 'store']);
     Route::get('superadmin/user/cari', [UserController::class, 'cari']);

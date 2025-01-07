@@ -10,4 +10,5 @@ class Pelapor extends Model
     use HasFactory;
     protected $table = 'pelapor';
     protected $guarded = ['id'];
+    public $timestamps = false;
 }

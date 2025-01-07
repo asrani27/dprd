@@ -65,7 +65,7 @@
         <tr>
             <td width="60%"></td>
             <td></td>
-            <td><br/>Banjarmasin, {{\Carbon\Carbon::now()->translatedFormat('d F Y')}}<br/>
+            <td style="text-align: center"><br/>Banjarmasin, {{\Carbon\Carbon::now()->translatedFormat('d F Y')}}<br/>
             Sekretariat DPRD Prov Kalsel<br/>
             Sekretariat DPRD <br/><br/><br/><br/>
 

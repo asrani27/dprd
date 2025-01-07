@@ -26,6 +26,12 @@ class UserController extends Controller
 
         return view('admin.user.edit', compact('data'));
     }
+    public function detail($id)
+    {
+        $data = User::find($id);
+
+        return view('admin.user.detail', compact('data'));
+    }
     public function delete($id)
     {
         if (Auth::user()->id == $id) {
